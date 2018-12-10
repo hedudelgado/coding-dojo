@@ -4,7 +4,7 @@
   "description": "",
   "main": "",
   "scripts": {
-    "test": "jest --watch --env=jsdom --verbose",
+    "test": "jest --watch",
     "precommit": "lint-staged"
   },
   "jest": {
