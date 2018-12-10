@@ -13,3 +13,4 @@ Kata 6 deconstruction
 Kata 1 and 2 Syntax
 Kata 3 and 4 Sort
 Kata 5 semicolons
+Kata 6 NaN

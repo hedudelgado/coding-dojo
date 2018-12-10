@@ -80,28 +80,25 @@ describe('Challenges team 3', () => {
     });
   
   
-    // // //////////////////////////////////////
-    // // //  KATA 6
-    // // //////////////////////////////////////
-    // it('Whitbread requested a getProject() functionality that will tell which teams is working in what', () => {
-  
-    //   wt2 = {
-    //     project: 'Search Results',
-    //   }
-  
-    //   wt1 = {
-    //     project: 'Booking Flow',
-    //   }
-  
-    //   // Cant modify the function
-    //   var getProject = function(){
-    //     return this.project;
-    //   }
-  
-    //   // Use the getProject function and solve it in here!
-    //   expect().toEqual('Booking Flow');
-    //   expect().toEqual('search results');
-    // });
+    // //////////////////////////////////////
+    // //  KATA 6
+    // //////////////////////////////////////
+    it('This function is buggy, modify to fix it', () => {
+      
+      // Modify the function to match the expectations
+      function calculateQuarter(num){
+        if(typeof num === "NUMBER"){
+          return num / 4;
+        }else{
+          return 'Sorry, the input is not a number, change the value and try again';
+        };
+      }
+
+      
+      expect(calculateQuarter('bug')).toEqual('Sorry, the input is not a number, change the value and try again');
+      expect(calculateQuarter(4)).toEqual(1);
+      expect(calculateQuarter(NaN)).toEqual('Sorry, the input is not a number, change the value and try again');
+    });
   
     // //////////////////////////////////////
     // //  KATA 7
