@@ -106,17 +106,17 @@ describe('Challenges team 2', () => {
     // //////////////////////////////////////
     // //  KATA 7
     // //////////////////////////////////////
-    it('Write a function that identifies the only even or the only odd number', () => {
+    it('Write a function that identifies the TWO even or the TWO odd number and returns a new array with it', () => {
   
       // Not allowed to pass arguments
       function differentNumberIdentifier(){
-        var diffNumber;
+        var diffNumbers;
         
         // ANSWER HERE  
-        return diffNumber;
+        return diffNumbers;
       }
   
-      expect(differentNumberIdentifier([1,2,11])).toEqual(2);
-      expect(differentNumberIdentifier([8,3,10])).toEqual(3);
+      expect(differentNumberIdentifier([1,2,11])).toEqual([1,11]);
+      expect(differentNumberIdentifier([8,3,10])).toEqual([8,10]);
     });
   });
