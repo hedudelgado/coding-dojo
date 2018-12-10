@@ -103,16 +103,15 @@ describe('Challenges team 3', () => {
     // //////////////////////////////////////
     // //  KATA 7
     // //////////////////////////////////////
-    // it('Write a function that identifies the only even or the only odd number', () => {
+    it('Write a function that identifies the only object that has a bug and kick out', () => {
+      teams = [{ WTeam: 1 },{ WTeam: 2 },{WTeam: 3},{ WTeam: 'bug' }]
+
+      // Not allowed to pass arguments
+      function differentNumberIdentifier(){
+        // write code here
+        return teams;
+      }
   
-    //   // Not allowed to pass arguments
-    //   function differentNumberIdentifier(){
-    //     var diffNumber;
-  
-    //     return diffNumber;
-    //   }
-  
-    //   expect(differentNumberIdentifier([1,2,11])).toEqual(2);
-    //   expect(differentNumberIdentifier([8,3,10])).toEqual(3);
-    // });
+      expect(differentNumberIdentifier()).toEqual([{ WTeam: 1 },{ WTeam: 2 },{WTeam: 3}]);
+    });
   });
