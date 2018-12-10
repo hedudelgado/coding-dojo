@@ -103,7 +103,7 @@ describe('Challenges team 3', () => {
     // //////////////////////////////////////
     // //  KATA 7
     // //////////////////////////////////////
-    it('Write a function that identifies the only object that has a bug and kick out', () => {
+    it('Write a function that identifies the only team that has a bug and kick out', () => {
       teams = [{ WTeam: 1 },{ WTeam: 2 },{WTeam: 3},{ WTeam: 'bug' }]
 
       // Not allowed to pass arguments
