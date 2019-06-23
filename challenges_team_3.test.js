@@ -50,7 +50,7 @@ describe('Challenges team 3', () => {
 
       // answer here
       array.sort();
-      expect(array).toBe([-7, -2, 2, 6]);
+      expect(array).toEqual([-7, -2, 2, 6]);
     });
   
     // // //////////////////////////////////////
@@ -61,7 +61,7 @@ describe('Challenges team 3', () => {
 
       // answer here
       array.sort();
-      expect(array).toBe([6, 2, -2, -7]);
+      expect(array).toEqual([6, 2, -2, -7]);
     });
   
     // // //////////////////////////////////////
