@@ -14,7 +14,7 @@ describe('Challenges team 1', () => {
     foo();
       
     // answer here  
-    expect(trickyScope).toBe();
+    expect(trickyScope).toBe(20);
   });
 
   // //////////////////////////////////////
@@ -26,20 +26,20 @@ describe('Challenges team 1', () => {
     misleadingArray[100] = 5;
 
     // answer here
-    expect(misleadingArray.length).toBe();
+    expect(misleadingArray.length).toBe(101);
     // answer here
-    expect(misleadingArray[10]).toBe();
+    expect(misleadingArray[10]).toBe(undefined);
     // answer here
-    expect(misleadingArray[100]).toBe();
+    expect(misleadingArray[100]).toBe(5);
     
     misleadingArray.length = 5;
     
     // answer here
-    expect(misleadingArray.length).toBe();
+    expect(misleadingArray.length).toBe(5);
     // answer here
-    expect(misleadingArray[10]).toBe();
+    expect(misleadingArray[10]).toBe(undefined);
     // answer here
-    expect(misleadingArray[100]).toBe();
+    expect(misleadingArray[100]).toBe(undefined);
   });
 
   // //////////////////////////////////////
@@ -48,16 +48,17 @@ describe('Challenges team 1', () => {
   it('WT1 is a mess!!!! needs a PO now!!!', () => {
     wt1 = {
       PO: '',
-      assignPO : function(wt, po){
+      assignPO : function(po){
         // Write the code to assign a PO
+        this.PO = po;
       }
     }
 
     const po = 'shweta';
-    wt1.assignPO(wt1, po);
+    wt1.assignPO(po);
 
     // answer here
-    expect(wt1.PO).toEqual();
+    expect(wt1.PO).toEqual(po);
   });
 
   // //////////////////////////////////////
@@ -66,16 +67,17 @@ describe('Challenges team 1', () => {
   it('WT1 is a mess!!!! needs a QA now!!!', () => {
     wt1 = {
       QA: [],
-      assignQA: function (wt, qa){
+      assignQA: function (qa){
         // Write the code to assign
+        this.QA.push(qa);
       }
     }
 
-    const qa = '';
-    wt1.assignQA(wt1, qa);
+    const qa = 'a qa';
+    wt1.assignQA(qa);
 
     // answer here
-    expect(wt1.QA.includes()).toEqual(true);
+    expect(wt1.QA.includes(qa)).toEqual(true);
   });
 
   // //////////////////////////////////////
@@ -86,12 +88,13 @@ describe('Challenges team 1', () => {
       developers: ['Nish', 'Dimitris', 'Rachelle', 'Anita', 'Chitra', 'David', 'cheekyMember'],
       manageDevelopers: function(wt, qa, action){
         // There is a cheekyMember in WT1 find him and kick him out!!!!
+        action === 'kick out' ? this.developers.splice(this.developers.indexOf(qa),this.developers.indexOf(qa) +1) : this.developers.push(qa);
       }
     }
 
-    wt1.manageDevelopers(wt1, 'cheekyMember');
+    wt1.manageDevelopers(wt1, 'cheekyMember', 'kick out');
 
-    expect(wt1.developers.includes('cheekyMember')).toEqual();
+    expect(wt1.developers.includes('cheekyMember')).toEqual(false);
   });
 
   // //////////////////////////////////////
@@ -113,8 +116,8 @@ describe('Challenges team 1', () => {
     }
 
     // Use the getProject function and solve it in here!
-    expect().toEqual('Booking Flow');
-    expect().toEqual('search results');
+    expect(getProject.bind(wt1)()).toEqual('Booking Flow');
+    expect(getProject.bind(wt2)()).toEqual('Search Results');
   });
 
   //////////////////////////////////////
@@ -123,11 +126,16 @@ describe('Challenges team 1', () => {
   it('Write a function that identifies the only even or the only odd number', () => {
 
     // Not allowed to pass arguments
-    function differentNumberIdentifier(){
+    function differentNumberIdentifier(numbers){
       var diffNumber;
       // Modify the function
+      diffNumber = numbers.filter( n => n % 2 === 1);
+      if(diffNumber.length > 1){
+        return numbers.filter( n => n % 2 == 0)[0];
+      }else{
+        return diffNumber[0];
+      }
       
-      return diffNumber;
     }
 
     expect(differentNumberIdentifier([1,2,11])).toEqual(2);

@@ -14,7 +14,7 @@ describe('Challenges team 2', () => {
       foo;
       
       // ANSWER HERE
-      expect(trickyScope).toBe();
+      expect(trickyScope).toBe(20);
     });
   
     //////////////////////////////////////
@@ -23,18 +23,18 @@ describe('Challenges team 2', () => {
     it('Guess the misleadingArray properties', () => {
       const misleadingArray = [1, 2, 3, 4];
   
-      expect(misleadingArray.length).toBe();
+      expect(misleadingArray.length).toBe(4);
       misleadingArray.length = 15;
       misleadingArray[1] = 5;
 
       // ANSWER HERE
-      expect(misleadingArray.length).toBe();
+      expect(misleadingArray.length).toBe(15);
 
       // ANSWER HERE
-      expect(misleadingArray[10]).toBe();
+      expect(misleadingArray[10]).toBe(undefined);
       
       // ANSWER HERE
-      expect(misleadingArray[100]).toBe();
+      expect(misleadingArray[100]).toBe(undefined);
     });
   
     // // //////////////////////////////////////
@@ -48,7 +48,7 @@ describe('Challenges team 2', () => {
       foo = function() { return value = 2; }
   
       // Answer here
-      expect(value).toEqual();
+      expect(value).toEqual(1);
     });
     
     // // //////////////////////////////////////
@@ -62,7 +62,7 @@ describe('Challenges team 2', () => {
       function foo() { return value = 2; }
   
       // Answer here
-      expect(value).toEqual();
+      expect(value).toEqual(2);
     });
   
     // // //////////////////////////////////////
@@ -77,7 +77,7 @@ describe('Challenges team 2', () => {
       map[keyTwo] = "keyTwo";
 
       // Answer here
-      expect(map[key1]).toBe();
+      expect(map[key1]).toBe("keyTwo");
     });
   
     // // //////////////////////////////////////
@@ -90,9 +90,10 @@ describe('Challenges team 2', () => {
           developers: ['Dimitris', 'Ivan', 'David', 'Nish', 'Anhita', 'Rachelle']
         }
       };
-      // CREATE A VAR qa and extract qa from WT1
-
-      // CREATE VARS like dev1 dev2 and dev3 that return each of the devs
+      // CREATE A CONST qa and extract qa from WT1
+      const { techy:{qa: qa} } = webTeam1;
+      // CREATE CONSTSS like dev1 dev2 and dev3 that return each of the devs
+      const { techy:{ developers: [dev1, dev2, dev3, dev4, dev5, dev6] } } = webTeam1;
   
       expect(dev1).toEqual('Dimitris');
       expect(dev2).toEqual('Ivan');
@@ -109,11 +110,18 @@ describe('Challenges team 2', () => {
     it('Write a function that identifies the TWO even or the TWO odd number and returns a new array with it', () => {
   
       // Not allowed to pass arguments
-      function differentNumberIdentifier(){
+      function differentNumberIdentifier(arr){
         var diffNumbers;
+
+        diffNumbers = arr.filter(even => even % 2 === 0);
+
+        if(diffNumbers.length === 2){
+          return diffNumbers;
+        }else{
+          return arr.filter(even => even % 2 === 1);
+        }
         
         // ANSWER HERE  
-        return diffNumbers;
       }
   
       expect(differentNumberIdentifier([1,2,11])).toEqual([1,11]);
